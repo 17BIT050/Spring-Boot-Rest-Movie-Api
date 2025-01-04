@@ -3,7 +3,6 @@ package com.training.capstone.MovieRestAPI.service;
 import com.training.capstone.MovieRestAPI.dto.ActorDto;
 import com.training.capstone.MovieRestAPI.model.Actor;
 import com.training.capstone.MovieRestAPI.repository.ActorRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,8 +1,6 @@
 package com.training.capstone.MovieRestAPI.controller;
 
 import com.training.capstone.MovieRestAPI.dto.GenreDto;
-import com.training.capstone.MovieRestAPI.dto.MovieDto;
-import com.training.capstone.MovieRestAPI.model.Genre;
 import com.training.capstone.MovieRestAPI.service.GenreService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

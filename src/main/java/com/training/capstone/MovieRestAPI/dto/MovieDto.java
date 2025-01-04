@@ -1,10 +1,5 @@
 package com.training.capstone.MovieRestAPI.dto;
 
-import com.training.capstone.MovieRestAPI.model.Actor;
-import com.training.capstone.MovieRestAPI.model.Genre;
-import com.training.capstone.MovieRestAPI.model.Review;
-import jakarta.persistence.*;
-
 import java.util.Set;
 
 public class MovieDto {

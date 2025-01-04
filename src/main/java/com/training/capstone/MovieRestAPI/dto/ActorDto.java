@@ -1,8 +1,5 @@
 package com.training.capstone.MovieRestAPI.dto;
 
-import com.training.capstone.MovieRestAPI.model.Movie;
-
-
 import java.util.Set;
 
 public class ActorDto {

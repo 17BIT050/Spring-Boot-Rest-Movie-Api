@@ -1,8 +1,5 @@
 package com.training.capstone.MovieRestAPI.dto;
 
-import com.training.capstone.MovieRestAPI.model.Movie;
-import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 
 public class ReviewDto {

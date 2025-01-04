@@ -53,10 +53,6 @@ public class ReviewService {
                     filter(review -> review.getReviewId() == reviewId).
                     findFirst().orElse(null);
             logger.info("Movie id - " + movieId + "Created at - " + isReviewExist.getCreatedAt());
-//            for(Review review : reviews){
-//                logger.info("ID >> " + review.getReviewId());
-//                logger.info("Created at >> " + review.getCreatedAt());
-//            }
             if (isReviewExist != null) {
                 logger.info("review id >> " + reviewDto.getReviewId());
                 reviewDto.setReviewId(reviewId); // set the review id

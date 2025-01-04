@@ -1,7 +1,6 @@
 package com.training.capstone.MovieRestAPI.service;
 
 import com.training.capstone.MovieRestAPI.dto.GenreDto;
-import com.training.capstone.MovieRestAPI.dto.MovieDto;
 import com.training.capstone.MovieRestAPI.model.Genre;
 import com.training.capstone.MovieRestAPI.model.Movie;
 import com.training.capstone.MovieRestAPI.repository.GenreRepository;
