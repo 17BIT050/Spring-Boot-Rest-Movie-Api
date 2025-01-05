@@ -15,7 +15,7 @@ public class Genre {
     @Column(name="genre_name", unique = true, length = 20)
     private String name;
 
-    @ManyToMany(mappedBy = "genres",cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "genres",cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     private Set<Movie> movies = new HashSet<>();
 
   //  private Movie movie;

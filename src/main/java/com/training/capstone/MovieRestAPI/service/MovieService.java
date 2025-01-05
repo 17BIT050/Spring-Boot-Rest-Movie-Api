@@ -41,7 +41,7 @@ public class MovieService {
     public MovieDto saveMovie( MovieDto movieDto){
         final Movie movie = toEntity(movieDto);
         final Movie savedMovie = movieRepository.save(movie);
-        return toDto(movie);
+        return toDto(savedMovie);
     }
 
     public List<MovieDto> getAllMovies(){
@@ -49,9 +49,16 @@ public class MovieService {
         return movies.stream().map(this::toDto).collect(Collectors.toList());
     }
 
+    public MovieDto getMovieByID(int movieId){
+        Movie movie = movieRepository.findById(movieId).orElse(null);
+        if(movie == null)
+            return null;
+        return toDto(movie);
+    }
     public Movie getMovieById(int movieId){
         return movieRepository.findById(movieId).orElse(null);
     }
+
 
 
     @Transactional
@@ -83,10 +90,12 @@ public class MovieService {
         genres.forEach(genre -> genre.setMovie(movie));
 
 
+
         final Set<ReviewDto> reviewDtos = movieDto.getReviewsDto();
         final Set<Review> reviews = reviewService.toEntity(reviewDtos);
-        movie.setReviews(reviews);
         reviews.forEach(review -> review.setMovie(movie));
+        movie.setReviews(reviews);
+
 
         return movie;
     }

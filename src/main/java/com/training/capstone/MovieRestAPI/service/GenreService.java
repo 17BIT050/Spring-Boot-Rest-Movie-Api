@@ -64,6 +64,9 @@ public class GenreService {
     public Genre toEntity(GenreDto genreDto){
         Genre genre = new Genre();
         genre.setGenreId(genreDto.getGenreId());
+        if(isGenreExists(genreDto)){
+            return genreRepository.findById(genre.getGenreId()).orElse(null);
+        }
         genre.setName(genreDto.getName());
         return genre;
     }
@@ -75,5 +78,8 @@ public class GenreService {
         return genreDto;
     }
 
+    Boolean isGenreExists(GenreDto genreDto){
+        return genreRepository.existsById(genreDto.getGenreId());
+    }
 
 }

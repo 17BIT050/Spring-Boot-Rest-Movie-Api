@@ -4,6 +4,7 @@ import com.training.capstone.MovieRestAPI.dto.ReviewDto;
 import com.training.capstone.MovieRestAPI.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -41,6 +42,7 @@ public class ReviewController {
         return reviewService.updateReviewByID(movieId,reviewId,reviewDto);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/review/{movieId}/{reviewId}")
     public ResponseEntity<String> deleteReview(@PathVariable int movieId, @PathVariable int reviewId){
         boolean result  = reviewService.deleteReviewById(movieId,reviewId);
